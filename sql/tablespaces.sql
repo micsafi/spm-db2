@@ -1,0 +1,2 @@
+CREATE TABLESPACE Curam_L pagesize 32K managed by system using ('/tmp/DB2/Curam_L') bufferpool highmem
+CREATE TEMPORARY TABLESPACE Curam_T pagesize 32K managed by system using ('/tmp/DB2/Curam_T') bufferpool highmem
