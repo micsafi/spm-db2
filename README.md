@@ -36,6 +36,20 @@ IBM SPM requires certain DB2 [post-configurations](https://www.ibm.com/support/k
 
 These post-configurations are executed automatically when the container is started.
 
-## Notice
+## Pre-built Image
 
-This container image is not available as pre-built binary image in Docker Hub or any public image registeries.
+If you don't want to build the image from source, you can pull a pre-built image from [quay.io](https://quay.io/repository/micsafi/spm-db2) and just run it as follows.
+
+```
+docker pull quay.io/micsafi/spm-db2
+docker run -itd \
+    --name spm-db2 \
+    --privileged=true \
+    -p 50000:50000 \
+    -e LICENSE=accept \
+    -e DB2INST1_PASSWORD=<password> \
+    -e DBNAME=curam \
+    -v <db-storage-dir>:/database \
+    quay.io/micsafi/spm-db2
+
+```
